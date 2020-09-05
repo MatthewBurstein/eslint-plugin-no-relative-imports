@@ -1,5 +1,5 @@
 const RuleTester = require("eslint").RuleTester
-const rule = require("../../lib/rules/no-relative-imports")
+const rule = require("../../../lib/rules/no-relative-imports")
 const invalidCodeTest = require("../../utils").invalidCodeTest
 
 const ruleTester = new RuleTester({
@@ -9,7 +9,7 @@ const ruleTester = new RuleTester({
   },
 })
 
-const requireErrorMessage =
+const errorMessage =
   "paths in require statements must be absolute, not relative"
 
 ruleTester.run("no-relative-imports", rule, {
@@ -20,13 +20,13 @@ ruleTester.run("no-relative-imports", rule, {
     "import bar from 'foo/bar'",
   ],
   invalid: [
-    invalidCodeTest('import foo from "./foo"', requireErrorMessage),
-    invalidCodeTest('import foo from "../foo"', requireErrorMessage),
-    invalidCodeTest('import foo from "./../foo"', requireErrorMessage),
-    invalidCodeTest('import foo from "../../foo"', requireErrorMessage),
-    invalidCodeTest("import foo from './foo'", requireErrorMessage),
-    invalidCodeTest("import foo from '../foo'", requireErrorMessage),
-    invalidCodeTest("import foo from './../foo'", requireErrorMessage),
-    invalidCodeTest("import foo from '../../foo'", requireErrorMessage),
+    invalidCodeTest('import foo from "./foo"', errorMessage),
+    invalidCodeTest('import foo from "../foo"', errorMessage),
+    invalidCodeTest('import foo from "./../foo"', errorMessage),
+    invalidCodeTest('import foo from "../../foo"', errorMessage),
+    invalidCodeTest("import foo from './foo'", errorMessage),
+    invalidCodeTest("import foo from '../foo'", errorMessage),
+    invalidCodeTest("import foo from './../foo'", errorMessage),
+    invalidCodeTest("import foo from '../../foo'", errorMessage),
   ],
 })
