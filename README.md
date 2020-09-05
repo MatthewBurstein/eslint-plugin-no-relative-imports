@@ -1,6 +1,7 @@
 # eslint-plugin-no-relative-imports
 
-An eslint plugin to prevent relative paths in import and require statement
+An eslint plugin to prevent relative paths in `import` statements. You will need to enable absolute imports,
+for example by using a `root` or `alias` in the `resolve` section of your webpack config.
 
 ## Installation
 
@@ -35,14 +36,14 @@ Then configure the rules you want to use under the rules section.
 ```json
 {
     "rules": {
-        "no-relative-imports/rule-name": 2
+        "no-relative-imports/no-relative-imports": 2
     }
 }
 ```
 
 ## Supported Rules
 
-* Fill in provided rules here
+* `no-relative-imports`: prevent the use of relative paths in import statements.
 
 
 
