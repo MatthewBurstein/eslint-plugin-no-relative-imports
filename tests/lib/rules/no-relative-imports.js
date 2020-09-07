@@ -9,8 +9,7 @@ const ruleTester = new RuleTester({
   },
 })
 
-const errorMessage =
-  "paths in require statements must be absolute, not relative"
+const errorMessage = "paths in import statements must be absolute, not relative"
 
 ruleTester.run("no-relative-imports", rule, {
   valid: [

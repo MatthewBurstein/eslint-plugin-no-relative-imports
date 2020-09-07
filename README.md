@@ -36,14 +36,14 @@ Then configure the rules you want to use under the rules section.
 ```json
 {
     "rules": {
-        "no-relative-imports/no-relative-imports": 2
+        "no-relative-imports/no-relative-imports": "error"
     }
 }
 ```
 
 ## Supported Rules
 
-* `no-relative-imports`: prevent the use of relative paths in import statements.
+* `no-relative-imports`: prevent the use of relative paths in `import` statements.
 
 
 
